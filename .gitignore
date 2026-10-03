@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+generate_ppt.py
+generate_docx.py
+~$*

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests</title>
+</head>
+<body>
+    <pre id="test-output"></pre>
+    <script>
+        window.controlPlane = {
+            stats: { history: [] },
+            subscribe: () => {}
+        };
+    </script>
+    <script src="js/data/corpus.js"></script>
+    <script src="js/data/scenarios.js"></script>
+    <script src="js/grounding.js"></script>
+    <script src="js/tier2.js"></script>
+    <script src="js/detection.js"></script>
+    <script src="js/simulation.js"></script>
+    <script src="js/policy.js"></script>
+    <script>
+        const output = document.getElementById('test-output');
+        function log(msg) { output.textContent += msg + '\n'; }
+        
+        try {
+            GroundingEngine.buildIndex();
+            
+            const req006 = SCENARIOS.find(s => s.id === 'req_006');
+            if (req006) {
+                log('req_006 Grounding test:');
+                const res = GroundingEngine.verifyClaim("Your order is arriving in 5 minutes via private jet.", "cs_bot");
+                log('Verdict: ' + res.verdict);
+                log('Top Docs: ' + JSON.stringify(res.topDocs));
+                log('Contradictions: ' + JSON.stringify(res.contradictions));
+            }
+        } catch(e) {
+            log(e.stack);
+        }
+    </script>
+</body>
+</html>

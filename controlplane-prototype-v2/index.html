@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ControlPlane.ai - Prototype</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <!-- Chart.js (for Analytics) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/inspection.css">
+    <link rel="stylesheet" href="css/policy.css">
+    <link rel="stylesheet" href="css/sandbox.css">
+    <link rel="stylesheet" href="css/analytics.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="brand">
+                <span class="material-icons-round brand-icon">security</span>
+                <span class="brand-name">ControlPlane.ai</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item active" data-view="dashboard">
+                    <span class="material-icons-round">dashboard</span>
+                    <span>Live Traffic</span>
+                </li>
+                <li class="nav-item" data-view="inspection">
+                    <span class="material-icons-round">plagiarism</span>
+                    <span>Inspection</span>
+                </li>
+                <li class="nav-item" data-view="policy">
+                    <span class="material-icons-round">policy</span>
+                    <span>Policies</span>
+                </li>
+                <li class="nav-item" data-view="sandbox">
+                    <span class="material-icons-round">science</span>
+                    <span>Live Sandbox</span>
+                </li>
+                <li class="nav-item" data-view="analytics">
+                    <span class="material-icons-round">analytics</span>
+                    <span>Analytics</span>
+                </li>
+                <li class="nav-item" data-view="architecture">
+                    <span class="material-icons-round">account_tree</span>
+                    <span>Architecture</span>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="team-badge">Team AccentureInnovators#AI</div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <h1 id="view-title">Live Traffic Monitor</h1>
+                <div class="header-actions">
+                    <div class="status-indicator" id="model-status-indicator" style="background: rgba(245, 158, 11, 0.1); color: var(--status-warning); border-color: var(--status-warning);">
+                        <span class="material-icons-round" id="model-status-icon" style="font-size: 14px; margin-right: 4px;">cloud_download</span>
+                        <span id="model-status-text">Downloading Model...</span>
+                    </div>
+                    <div class="status-indicator">
+                        <span class="pulse-dot"></span>
+                        <span>System Active</span>
+                    </div>
+                    <button class="btn btn-primary" id="btn-simulate">
+                        <span class="material-icons-round">play_arrow</span>
+                        Auto-Play Traffic
+                    </button>
+                </div>
+            </header>
+
+            <!-- View Container -->
+            <div id="view-container" class="view-container">
+                <!-- Views will be injected here via JS -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data/scenarios.js?v=2"></script>
+    <script src="js/data/corpus.js?v=2"></script>
+    <script src="js/grounding.js?v=2"></script>
+    <script src="js/detection.js?v=2"></script>
+    <script src="js/tier2.js?v=2"></script>
+    <script src="js/simulation.js?v=2"></script>
+    <script src="js/dashboard.js?v=2"></script>
+    <script src="js/inspection.js?v=2"></script>
+    <script src="js/policy.js?v=2"></script>
+    <script src="js/sandbox.js?v=2"></script>
+    <script src="js/analytics.js?v=2"></script>
+    <script src="js/app.js?v=2"></script>
+</body>
+</html>
